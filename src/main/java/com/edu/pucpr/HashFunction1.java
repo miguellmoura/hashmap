@@ -6,9 +6,9 @@ public class HashFunction1 extends HashTable {
     public Integer hashFunction(String name) {
         int hash = 0;
         for (int i = 0; i < name.length(); i++) {
-            hash += name.charAt(i) * (i + 1);
+            hash = 31 * hash + name.charAt(i);
         }
-        return hash % 32;
+        return Math.abs(hash % 32);
     }
 
     public HashFunction1 () {
