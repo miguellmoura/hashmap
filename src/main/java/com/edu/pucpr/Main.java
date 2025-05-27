@@ -50,7 +50,6 @@ public class Main {
         System.out.println("\n--- Tabela HashFunction2 ---");
         for (String fname : hashFunction2.table) {
             System.out.println(fname);
-            System.out.println();
         }
 
         System.out.println("\n--- HashFunction1 ---");
