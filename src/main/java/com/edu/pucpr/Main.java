@@ -19,9 +19,7 @@ public class Main {
 
         while (leitor1.hasNextLine()) {
             String name = leitor1.nextLine().trim();
-
-            Integer hash = hashFunction1.hashFunction(name);
-            hashFunction1.put(name, hash);
+            hashFunction1.put(name);
         }
 
         long endInsert1 = System.nanoTime();
@@ -36,9 +34,7 @@ public class Main {
 
         while (leitor2.hasNextLine()) {
             String name = leitor2.nextLine().trim();
-
-            Integer hash2 = hashFunction2.hashFunction(name);
-            hashFunction2.put(name, hash2);
+            hashFunction2.put(name);
         }
 
         long endInsert2 = System.nanoTime();

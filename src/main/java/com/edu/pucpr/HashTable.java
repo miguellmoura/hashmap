@@ -16,14 +16,13 @@ public abstract class HashTable {
 
     public abstract Integer hashFunction(String name);
 
-    public void put(String name, Integer value) {
-
+    public void put(String name) {
         Float FATOR_DE_CARGA = 0.85F;
         if (this.size >= FATOR_DE_CARGA * this.tableCapacity) {
             this.resizeTable();
-            value = this.hashFunction(name);
         }
 
+        int value = this.hashFunction(name);
         while (this.table[value] != null) {
             this.collisions++;
             value = (value + 1) % this.tableCapacity;
@@ -42,11 +41,11 @@ public abstract class HashTable {
 
         for (String name : oldTable) {
             if (name != null) {
-                int value = this.hashFunction(name);
-                this.put(name, value);
+                this.put(name);
             }
         }
     }
+
 
     public String remove(String name, Integer value) {
         this.table[value] = null;
