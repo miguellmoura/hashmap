@@ -2,6 +2,7 @@ package com.edu.pucpr;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -55,9 +56,11 @@ public class Main {
         System.out.println("\n--- HashFunction1 ---");
         System.out.println("Colisões: " + hashFunction1.collisions);
         System.out.println("Tempo de inserção: " + totalInsert1 + " ns");
+        System.out.println("Tempo de busca: " + hashFunction1.get("Julietta") + "ns");
 
         System.out.println("\n--- HashFunction2 ---");
         System.out.println("Colisões: " + hashFunction2.collisions);
         System.out.println("Tempo de inserção: " + totalInsert2 + " ns");
+        System.out.println("Tempo de busca: " + hashFunction2.get("Julietta") + "ns");
     }
 }

@@ -32,6 +32,23 @@ public abstract class HashTable {
         this.size++;
     }
 
+    public long get (String nome) {
+
+        long searchStartTime = System.nanoTime();
+
+        Integer value = this.hashFunction(nome);
+
+        while (!table[value].equals(nome)) {
+            value += 1;
+        }
+
+        long searchEndTime = System.nanoTime();
+
+        long searchTime = searchEndTime - searchStartTime;
+
+        return searchTime;
+    }
+
     private void resizeTable() {
         this.tableCapacity = (int) Math.floor(this.tableCapacity * 1.1);
         String[] oldTable = this.table;
