@@ -39,7 +39,12 @@ public abstract class HashTable {
         Integer value = this.hashFunction(nome);
 
         while (!table[value].equals(nome)) {
-            value += 1;
+            if (value == table.length - 1) {
+                System.out.println("Nome não encontrado!");
+                break;
+            } else {
+                value += 1;
+            }
         }
 
         long searchEndTime = System.nanoTime();
